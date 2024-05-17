@@ -8,17 +8,17 @@
 </head>
 <body>
     <header>
-        <img src="">
+        <i class="fa-brands fa-twitter"></i>
         Mini Rede Social
     </header>
     <main>
         <form>
             <div class="textPost">
-                <p>Digite seu post:</p>
+                <p><i class="fa-solid fa-pen"></i> Digite seu post:</p>
                 <textarea class="input" name="textPost" id="textPost" cols="30" rows="10" placeholder="O que você está pensando hoje?"></textarea>
             </div>
             <div class="divCategorias">
-                <p>Categorias:</p>
+                <p><i class="fa-solid fa-list"></i> Categorias:</p>
                 <select class="input" name="categorias" id="categorias" required>
                     <option value="todos">Todos</option>
                     <!-- Adicionar mais categorias -->
@@ -26,19 +26,19 @@
             </div>
             <div class="imagens">
                 <div class="imagem">
-                    <p>Insira uma imagem (URL):</p>
+                    <p><i class="fa-solid fa-image"></i> Insira uma imagem (URL):</p>
                     <input class="input imgUrl" type="text" placeholder="Insira a url aqui">
                 </div>
                 <div class="imagem">
-                    <p>Insira uma imagem (URL):</p>
+                    <p><i class="fa-solid fa-image"></i> Insira uma imagem (URL):</p>
                     <input class="input imgUrl" type="text" placeholder="Insira a url aqui">
                 </div>
                 <div class="imagem">
-                    <p>Insira uma imagem (URL):</p>
+                    <p><i class="fa-solid fa-image"></i> Insira uma imagem (URL):</p>
                     <input class="input imgUrl" type="text" placeholder="Insira a url aqui">
                 </div>
             </div>
-            <input type="submit" class="postar">
+            <input type="submit" class="postar" value="Postar">
         </form>
         <section>
             <div class="filtro">
@@ -55,18 +55,19 @@
                         
                     </div>
                     <p class="categoria">Categoria: Dica</p>
-                    <div class="data">
+                    <div class="dataHora">
                         <p>Data e Hora:</p>
                         <p class="data"></p>
                     </div>
                     <div class="actions">
-                        <button>Editar</button>
-                        <button>Apagar</button>
+                        <button><i class="fa-solid fa-pen-to-square"></i> Editar</button>
+                        <button><i class="fa-solid fa-eraser"></i> Apagar</button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <script src="https://kit.fontawesome.com/751e7f14d3.js" crossorigin="anonymous"></script>
     <script src="./index.js"></script>
 </body>
 </html>
