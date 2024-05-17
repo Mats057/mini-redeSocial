@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        <img src="">
+        Mini Rede Social
+    </header>
+    <main>
+        <form>
+            <div class="textPost">
+                <p>Digite seu post:</p>
+                <textarea class="input" name="textPost" id="textPost" cols="30" rows="10" placeholder="O que você está pensando hoje?"></textarea>
+            </div>
+            <div class="divCategorias">
+                <p>Categorias:</p>
+                <select class="input" name="categorias" id="categorias" required>
+                    <option value="todos">Todos</option>
+                    <!-- Adicionar mais categorias -->
+                </select>
+            </div>
+            <div class="imagens">
+                <div class="imagem">
+                    <p>Insira uma imagem (URL):</p>
+                    <input class="input imgUrl" type="text" placeholder="Insira a url aqui">
+                </div>
+                <div class="imagem">
+                    <p>Insira uma imagem (URL):</p>
+                    <input class="input imgUrl" type="text" placeholder="Insira a url aqui">
+                </div>
+                <div class="imagem">
+                    <p>Insira uma imagem (URL):</p>
+                    <input class="input imgUrl" type="text" placeholder="Insira a url aqui">
+                </div>
+            </div>
+            <input type="submit" class="postar">
+        </form>
+        <section>
+            <div class="filtro">
+                <p>Filtrar por categoria:</p>
+                <select name="filtros" id="filtros">
+                    <option value="Todos">Todos</option>
+                    <!-- Adicionar mais categorias -->
+                </select>
+            </div>
+            <div class="posts">
+                <div class="post">
+                    <p class="titulo">Post teste</p>
+                    <div class="caroussel">
+                        
+                    </div>
+                    <p class="categoria">Categoria: Dica</p>
+                    <div class="data">
+                        <p>Data e Hora:</p>
+                        <p class="data"></p>
+                    </div>
+                    <div class="actions">
+                        <button>Editar</button>
+                        <button>Apagar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
