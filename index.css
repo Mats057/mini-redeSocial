@@ -90,3 +90,7 @@ section .filtro p {
 .categoria, .dataHora{
     font-style: italic;
 }
+
+.required {
+    border: 2px solid #f21d1d;
+}

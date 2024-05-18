@@ -12,7 +12,7 @@
         Mini Rede Social
     </header>
     <main>
-        <form>
+        <form id="sendPost">
             <div class="textPost">
                 <p><i class="fa-solid fa-pen"></i> Digite seu post:</p>
                 <textarea class="input" name="textPost" id="textPost" cols="30" rows="10" placeholder="O que você está pensando hoje?"></textarea>
@@ -21,30 +21,36 @@
                 <p><i class="fa-solid fa-list"></i> Categorias:</p>
                 <select class="input" name="categorias" id="categorias" required>
                     <option value="todos">Todos</option>
+                    <option value="noticias">Notícias</option>
+                    <option value="dicas">Dicas</option>
+                    <option value="eventos">Eventos</option>
                     <!-- Adicionar mais categorias -->
                 </select>
             </div>
             <div class="imagens">
                 <div class="imagem">
                     <p><i class="fa-solid fa-image"></i> Insira uma imagem (URL):</p>
-                    <input class="input imgUrl" type="text" placeholder="Insira a url aqui">
+                    <input class="input imgUrl" type="text" id="imagem1" placeholder="Insira a url aqui">
                 </div>
                 <div class="imagem">
                     <p><i class="fa-solid fa-image"></i> Insira uma imagem (URL):</p>
-                    <input class="input imgUrl" type="text" placeholder="Insira a url aqui">
+                    <input class="input imgUrl" type="text" id="imagem2" placeholder="Insira a url aqui">
                 </div>
                 <div class="imagem">
                     <p><i class="fa-solid fa-image"></i> Insira uma imagem (URL):</p>
-                    <input class="input imgUrl" type="text" placeholder="Insira a url aqui">
+                    <input class="input imgUrl" type="text" id="imagem3" placeholder="Insira a url aqui">
                 </div>
             </div>
-            <input type="submit" class="postar" value="Postar">
+            <input id="submit" type="submit" class="postar" value="Postar">
         </form>
         <section>
             <div class="filtro">
                 <p>Filtrar por categoria:</p>
                 <select name="filtros" id="filtros">
-                    <option value="Todos">Todos</option>
+                    <option value="todos">Todos</option>
+                    <option value="noticias">Notícias</option>
+                    <option value="dicas">Dicas</option>
+                    <option value="eventos">Eventos</option>
                     <!-- Adicionar mais categorias -->
                 </select>
             </div>
