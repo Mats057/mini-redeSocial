@@ -2,6 +2,7 @@ const form = document.querySelector("#sendPost");
 const submit = document.querySelector("#submit");
 const textoPost = document.querySelector("#textPost");
 const categorias = document.querySelector("#categorias");
+const select = document.querySelector("#filtros");
 const imagens = [
   document.querySelector("#imagem1"),
   document.querySelector("#imagem2"),
@@ -9,7 +10,9 @@ const imagens = [
 ];
 
 document.addEventListener("DOMContentLoaded", createCarousel);
-
+select.addEventListener("change", function () {
+  renderPosts(select.value);
+});
 submit.addEventListener("click", function (event) {
   event.preventDefault();
   if (verifyValue(textoPost) && verifyValue(categorias)) {
@@ -39,17 +42,21 @@ const verifyValue = (item) => {
 
 function salvarPost(post) {
   const posts = JSON.parse(localStorage.getItem("posts")) || [];
-  posts.push(post);
+  posts.unshift(post);
   localStorage.setItem("posts", JSON.stringify(posts));
-  renderPosts();
+  renderPosts(select.value);
 }
 
-function renderPosts() {
+function renderPosts(categoria) {
   const posts = JSON.parse(localStorage.getItem("posts")) || [];
   const postContainer = document.querySelector("#posts");
   postContainer.innerHTML = "";
+  if (posts.length == 0) {
+    postContainer.innerHTML = "<h2>Nenhum post encontrado</h2>";
+  }
   posts.forEach((post, id) => {
-    postContainer.innerHTML += `
+    if (categoria === "Todos" || post.categoria === categoria) {
+      postContainer.innerHTML += `
     <div class="post">
         <p class="titulo">${post.texto}</p>
         <div class="carousel">
@@ -79,17 +86,18 @@ function renderPosts() {
     </div>
     <span class="divider"></span>
         `;
+    }
   });
   createCarousel();
 }
 
 function apagarPost(id) {
-    if(confirm("Deseja realmente apagar este post?")) {
-        const posts = JSON.parse(localStorage.getItem("posts")) || [];
-        posts.splice(id, 1);
-        localStorage.setItem("posts", JSON.stringify(posts));
-        renderPosts();
-    }
+  if (confirm("Deseja realmente apagar este post?")) {
+    const posts = JSON.parse(localStorage.getItem("posts")) || [];
+    posts.splice(id, 1);
+    localStorage.setItem("posts", JSON.stringify(posts));
+    renderPosts(select.value);
+  }
 }
 
 function editarPost(id) {
@@ -100,7 +108,7 @@ function editarPost(id) {
     timeZone: "America/Sao_Paulo",
   });
   localStorage.setItem("posts", JSON.stringify(posts));
-  renderPosts();
+  renderPosts(select.value);
 }
 
 function createCarousel() {
@@ -134,4 +142,6 @@ function createCarousel() {
   });
 }
 
-renderPosts();
+function filtrarPosts() {}
+
+renderPosts(select.value);
