@@ -71,8 +71,8 @@ function renderPosts(categoria) {
                   post.imagens[2] ? post.imagens[2] : "./assets/empty.jpg"
                 }">
             </div>
-            <button class="carousel-control prev" id="prevBtn">Prev</button>
-            <button class="carousel-control next" id="nextBtn">Next</button>
+            <button class="carousel-control prev" id="prevBtn"><</button>
+            <button class="carousel-control next" id="nextBtn">></button>
         </div>
         <p class="categoria">Categoria: ${post.categoria}</p>
         <div class="dataHora">
